@@ -230,3 +230,62 @@ writeStream.on('drain', function(){ console.log('write buffer empty');});
 ```
 
 ## Simple Web
+- using the built in module 'http' let's stand up a very simple server
+```
+var http = require('http');
+var fs = require('fs');
+
+var server = http.createServer(function(req, res){
+	res.end('Whoa it worked!');
+});
+
+server.listen(1701, 'localhost');
+```
+- let's serve up a static index.html file so we have a landing spot!
+```
+var http = require('http');
+var fs = require('fs');
+
+
+var server = http.createServer(function(req, res){
+	if(req.url === '/')
+	{
+		res.writeHead(200, {'Content-Type': 'text/html'});
+		fs.createReadStream(__dirname + '/index.html').pipe(res);
+	}
+	else{
+		res.writeHead(500, {'Content-Type': 'text/html'});
+		res.end("don't tase me bro!");
+	}
+});
+
+server.listen(1701, 'localhost');
+```
+- let's route to some other static files that we might have laying around!
+```
+var http = require('http');
+var fs = require('fs');
+
+
+var server = http.createServer(function(req, res){
+	if(req.url === '/')
+	{
+		res.writeHead(200, {'Content-Type': 'text/html'});
+		fs.createReadStream(__dirname + '/index.html').pipe(res);
+	}
+	else
+	{
+		fs.exists(__dirname + '/public' + req.url, function(exists) { 
+		  if (exists) { 
+		    fs.createReadStream(__dirname + '/public'  + req.url).pipe(res);
+		  } 
+		 else{
+				res.writeHead(500, {'Content-Type': 'text/html'});
+				res.end("don't tase me bro!");
+		}
+		}); 
+	}
+});
+
+server.listen(1701, 'localhost');
+```
