@@ -35,6 +35,9 @@ show example of an object style
 - npmjs.org
 - npm init
 - npm install
+```
+request example here
+```
 - npm install --save
 - npm install --save-dev
 - npm install -g
