@@ -6,9 +6,6 @@
 - Installing Node
 - The Event Loop & Non-Blocking IO
 - Callbacks
-``` 
-very simple callback examples to warm folks up
-```
 - Example 1 : Random Work
 ```
   show random work being kicked off an the results staggering in
