@@ -6,9 +6,40 @@
 - Installing Node
 - The Event Loop & Non-Blocking IO
 - Callbacks
+```
+var workIsDone = function(results) {
+	console.log('The work is done! The results were: ' + results);
+};
+
+var doWork = function(input, callback) {
+	var results = 2 * 2;
+	callback(results);
+};
+
+doWork(10, workIsDone);
+```
 - Example 1 : Random Work
 ```
-  show random work being kicked off an the results staggering in
+ var doSomeWork = function(input, handle){
+	var timeToWait = parseInt(Math.random()*(1000));
+	console.log("Calling for: " + input);
+	setTimeout(function(){
+		handle(null, input);
+	}, timeToWait)
+}
+
+var handle = function(error, results) {
+	if(error){
+		console.log("Error: " + error.message)
+	}
+	else {
+		console.log("The results for: " + results);
+	}
+}
+
+for(i = 0; i < 10; i ++){
+	doSomeWork(i, handle);
+}
 ```
 
 ## Modules
