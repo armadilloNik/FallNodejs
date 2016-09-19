@@ -45,20 +45,23 @@ for(i = 0; i < 10; i ++){
 ## Modules
 - require() & Built-in Modules
 ``` 
-OS, Path, FS
+OS Example
+```
+``` 
+FS Example
+```
+``` 
+Path Example
 ```
 - require() & your modules
 ``` 
 show examples of directory hopping 
 ```
 ``` 
-module.exports 
-```
-```
-show example of function 
+SuperMath Example 
 ```
 ``` 
-show example of an object style 
+Person Example 
 ```
 - npmjs.org
 - npm init
