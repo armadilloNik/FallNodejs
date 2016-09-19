@@ -137,5 +137,3 @@ show a simple example. use one of the previous examples and re-write it
 ## Streams & Pipes
 
 ## Simple Web
-
-## Testing
