@@ -45,7 +45,7 @@ for(i = 0; i < 10; i ++){
 ## Modules
 - require() & Built-in Modules
 ``` 
-show examples 
+OS, Path, FS
 ```
 - require() & your modules
 ``` 
