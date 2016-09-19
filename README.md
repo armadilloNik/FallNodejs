@@ -39,6 +39,15 @@ show example of an object style
 
 
 ## Event Emitters 
+- describe emitters
+- show the syntax vs the earlier callback syntax
+```
+syntax example
+```
+- Why Event Emitters. callbacks give one opportunity to handle things. Emitters can give plenty of opportunity to react more often and in nice ways.
+```
+show a simple example. use one of the previous examples and re-write it
+```
 
 ## Streams & Pipes
 
