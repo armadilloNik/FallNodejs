@@ -13,12 +13,22 @@
 
 ## Modules
 - require() & Built-in Modules
-``` show examples ```
+``` 
+show examples 
+```
 - require() & your modules
-``` show examples of directory hopping ```
-``` module.exports ```
-``` show example of function ```
-``` show example of an object style ```
+``` 
+show examples of directory hopping 
+```
+``` 
+module.exports 
+```
+```
+show example of function 
+```
+``` 
+show example of an object style 
+```
 - npmjs.org
 - npm init
 - npm install
