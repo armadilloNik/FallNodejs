@@ -127,11 +127,43 @@ show how nodemon works
 - describe emitters
 - show the syntax vs the earlier callback syntax
 ```
-syntax example
+// So instead of
+var doSomeWork = function(input, callback){...}
+var callback = function(err, results){...}
+
+// we can do this
+var doSomeWork = function(input){...}
+var dw = doSomeWork(input);
+dw.on('calling', ...);
+dw.on('done', ...);
 ```
 - Why Event Emitters. callbacks give one opportunity to handle things. Emitters can give plenty of opportunity to react more often and in nice ways.
 ```
-show a simple example. use one of the previous examples and re-write it
+var EventEmitter = require('events').EventEmitter;
+
+var doSomeWork = function(input){
+	var timeToWait = parseInt(Math.random()*(1000));
+
+	var emitter = new EventEmitter();
+	
+	process.nextTick(function(){
+		emitter.emit('calling', input);
+		setTimeout(function(){
+				emitter.emit('done', input);		
+			},timeToWait)
+	});
+	return emitter;
+};
+
+var dw = doSomeWork(10);
+
+dw.on('calling', function(input){
+	console.log('calling for: ' + input);
+});
+
+dw.on('done', function(input){
+	console.log('work completed for: ' + input);
+});
 ```
 
 ## Streams & Pipes
