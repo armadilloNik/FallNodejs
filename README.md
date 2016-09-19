@@ -93,13 +93,6 @@ function showFileStats(fileName) {
 
 module.exports.showFileStats = showFileStats;
 ```
-
-``` 
-Person Example 
-```
-- npmjs.org
-- npm init
-- npm install
 ```
 //Person.js
 function Person(first, last){
@@ -114,6 +107,13 @@ var johnnyBravo = new Person('Johnny', 'Bravo');
 console.log(JSON.stringify(johnnyBravo));
 
 ```
+- npmjs.org
+- npm init
+- npm install
+```
+request example here
+```
+
 - npm install --save
 - npm install --save-dev
 - npm install -g
