@@ -45,21 +45,55 @@ for(i = 0; i < 10; i ++){
 ## Modules
 - require() & Built-in Modules
 ``` 
-OS Example
+var os = require('os');
+
+
+var myMachine = {
+	platform: os.platform(),
+	release: os.release(),
+	nics: os.networkInterfaces()
+
+}
+
+console.log(JSON.stringify(myMachine));
 ```
 ``` 
-FS Example
+var fs = require('fs');
+
+ fs.stat('FileSystem.js', (err, stats) => {
+    if (err) throw err;
+    console.log(JSON.stringify(stats));
+  });
 ```
 ``` 
-Path Example
+var path = require('path');
+
+
+console.log(path.basename('Path.js'));
+console.log(path.extname('Path.js'));
 ```
 - require() & your modules
 ``` 
-show examples of directory hopping 
+//myfsapp.js
+var myfs = require('./myfs');
+var yo = myfs.showFileStats('FileSystem.js');
+
+//myfs.js
+var fs = require('fs');
+
+
+function showFileStats(fileName) {
+	fs.stat(fileName, 
+		(err, stats) => {
+    		if (err) throw err;
+    console.log(JSON.stringify(stats));
+	});
+	
+};
+
+module.exports.showFileStats = showFileStats;
 ```
-``` 
-SuperMath Example 
-```
+
 ``` 
 Person Example 
 ```
@@ -67,7 +101,18 @@ Person Example
 - npm init
 - npm install
 ```
-request example here
+//Person.js
+function Person(first, last){
+	this.firstName = first;
+	this.lastName = last;
+}
+
+module.exports = Person;
+//PersonApp.js
+var Person = require('./person');
+var johnnyBravo = new Person('Johnny', 'Bravo');
+console.log(JSON.stringify(johnnyBravo));
+
 ```
 - npm install --save
 - npm install --save-dev
