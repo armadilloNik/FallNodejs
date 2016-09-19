@@ -111,13 +111,16 @@ console.log(JSON.stringify(johnnyBravo));
 - npm init
 - npm install
 ```
-request example here
+request package example here
 ```
 
 - npm install --save
 - npm install --save-dev
 - npm install -g
 - nodemon
+```
+show how nodemon works
+```
 
 
 ## Event Emitters 
